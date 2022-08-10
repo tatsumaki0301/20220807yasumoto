@@ -13,8 +13,12 @@ class TodolistRequest extends FormRequest
      */
     public function authorize()
     {
-            return true;
+            if ($this->path() == '/'){
+                return true;
+        } else {
+            return false;
         }
+    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -24,8 +28,7 @@ class TodolistRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required',
-            'content' => 'string,integer|min:0|max20',
+            'content' => 'string|min:0|max20',
         ];
     }
 }
