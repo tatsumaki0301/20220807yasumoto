@@ -33,7 +33,7 @@
 </ul>
 @endif
 
-<form action="/" method="get">
+<form action="/" method="post">
   @csrf
     <label class="title-name">Todo list<br>
     <input type="text" name="content" class="textbox">
