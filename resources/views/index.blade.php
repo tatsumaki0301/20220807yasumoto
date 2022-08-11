@@ -17,6 +17,14 @@
     border-color: magenta;
     border-radius: 5px;
   }
+  .editbutton{
+    padding: 5px 10px;
+    background-color: white;
+    color: orangered;
+    border-color: orangered;
+    border-radius: 5px;
+
+  }
 </style>
 
 @section('title', 'COACHTECH')
@@ -56,11 +64,14 @@
       <td>
         <input type="text" name="content" value="{{$todo->content}}">
       </td>
+    <form action="/?" method="post">
+    @csrf
       <td>
-        <button>更新</button>
+        <button class=editbutton>更新</button>
       </td>
+    </form>
       <td>
-        <button>削除</button>
+        <button class=deletebutton>削除</button>
       </td>
     </tr>
   @endforeach
