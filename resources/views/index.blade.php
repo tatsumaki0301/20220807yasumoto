@@ -22,6 +22,7 @@
 @section('title', 'COACHTECH')
 
 @section('content')
+
 @if (count($errors) > 0)
 <ul>
   @foreach ($error->all() as $error)
@@ -31,12 +32,15 @@
   @endforeach
 </ul>
 @endif
-<form action="/add" method="POST">
+
+<form action="/" method="get">
   @csrf
-  <label class="title-name">Todo list<br>
-  <input type="text" name="content" class="textbox">
-  </label>
-  <input type="button" name="addbutton" value="追加" class="addbutton">
+    <label class="title-name">Todo list<br>
+    <input type="text" name="content" class="textbox">
+    </label>
+    <button class=addbutton>追加</button>
+</form>
+
   <table>
     <tr>
       <th>作成日</th>
@@ -61,5 +65,4 @@
     </tr>
   @endforeach
   </table>
-</form>
 @endsection

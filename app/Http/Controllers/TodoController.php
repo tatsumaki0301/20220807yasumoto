@@ -14,49 +14,15 @@ class TodoController extends Controller
         return view('index', ['todos' => $todos]);
     }
 
-    public function find()
-    {
-        return view('find',['input' => '']);
-    }
-    public function search(Request $request)
-    {
-        $todo = Todo::find($request->input);
-        $param = [
-            'todo' => $todo,
-            'input' => $request->input
-        ];
-        return view('find',$param);
-    }
 
-    public function add(Request $request)
-    {
-        return view('add');
-    }
     public function create(TodolistRequest $request)
     {
         $form = $request->all();
         Todo::create($form);
         return redirect('/');
     }
-    public function edit(Request $request)
-    {
-        $todo = Todo::find($request->id);
-        return view('update', ['form' => $todo]);
-    }
-    public function update(TodolistRequest $request)
-    {
-        $form = $request->all();
-        Todo::where('id',$request->id)->update($form);
-        return redirect('/');
-    }
-    public function delete(Request $request)
-    {
-        $todo = Todo::find($request->id);
-        return view('delete', ['form' => $todo]);
-    }
-    public function remove(Request $request)
-    {
-        Todo::find($request->id)->delete();
-        return redirect('/');
-    }
+
 }
+
+
+
