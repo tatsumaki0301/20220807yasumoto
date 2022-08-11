@@ -11,9 +11,4 @@ class Todo extends Model
 
     protected $fillable = ['content'];
 
-    public function getDetail()
-    {
-        $txt = 'id:' .$this->id . '' .$this->content;
-        return $txt;
-    }
 }

@@ -16,5 +16,7 @@ use App\Http\Controllers\TodoController;
 
 Route::get('/', [TodoController::class, 'index']);
 
-Route::post('/', [TodoController::class, 'index']);
+Route::post('/', [TodoController::class, 'create']);
+
+
 
