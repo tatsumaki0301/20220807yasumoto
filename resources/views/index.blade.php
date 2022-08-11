@@ -22,12 +22,21 @@
 @section('title', 'COACHTECH')
 
 @section('content')
-<form action="/add" method="GET">
+@if (count($errors) > 0)
+<ul>
+  @foreach ($error->all() as $error)
+  <li>
+    {{$error}}
+  </li>
+  @endforeach
+</ul>
+@endif
+<form action="/add" method="POST">
   @csrf
   <label class="title-name">Todo list<br>
   <input type="text" name="content" class="textbox">
   </label>
-  <input type="submit" name="addbutton" value="追加" class="addbutton">
+  <input type="button" name="addbutton" value="追加" class="addbutton">
   <table>
     <tr>
       <th>作成日</th>

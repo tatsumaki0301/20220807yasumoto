@@ -30,7 +30,7 @@ class TodoController extends Controller
 
     public function add(Request $request)
     {
-        return view('/');
+        return view('add');
     }
     public function create(TodolistRequest $request)
     {
