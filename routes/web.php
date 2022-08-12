@@ -16,7 +16,9 @@ use App\Http\Controllers\TodoController;
 
 Route::get('/', [TodoController::class, 'index']);
 
+
 Route::post('/', [TodoController::class, 'create']);
 
-Route::post('/?', [TodoController::class, 'update']);
+
+Route::post('/?id={id?}', [TodoController::class, 'update']);
 
