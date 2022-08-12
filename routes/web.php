@@ -19,6 +19,6 @@ Route::get('/', [TodoController::class, 'index']);
 
 Route::post('/', [TodoController::class, 'create']);
 
-Route::get('/?id={id?}', [TodoController::class, 'update']);
-Route::post('/?id={id?}', [TodoController::class, 'update']);
+Route::get('/update', [TodoController::class, 'update']);
+Route::post('/update', [TodoController::class, 'update']);
 

@@ -33,6 +33,7 @@ class TodoController extends Controller
     public function update(TodolistRequest $request)
     {
         $form = $request->all();
+        dd($form);
         Todo::where('id', $request->id)->update($form);
         return redirect('/');
     }

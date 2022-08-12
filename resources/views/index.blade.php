@@ -61,7 +61,7 @@
       <td>
         {{$todo->created_at}}
       </td>
-    <form action="/?id={id?}" method="post">
+    <form action="/update" method="post">
       @csrf
       <td>
         <input type="text" name="content" value="{{$todo->content}}">
