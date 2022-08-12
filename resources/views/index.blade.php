@@ -61,15 +61,15 @@
       <td>
         {{$todo->created_at}}
       </td>
+    <form action="/?id={id?}" method="post">
+      @csrf
       <td>
         <input type="text" name="content" value="{{$todo->content}}">
       </td>
-  <form action="/?id={id?}" method="post">
-    @csrf
       <td>
         <button class=editbutton>更新</button>
       </td>
-  </form>
+    </form>
       <td>
         <button class=deletebutton>削除</button>
       </td>
