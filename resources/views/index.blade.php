@@ -52,6 +52,7 @@
   <table>
     <tr>
       <th>作成日</th>
+      <th></th>
       <th>タスク名</th>
       <th>更新</th>
       <th>削除</th>
@@ -63,6 +64,9 @@
       </td>
     <form action="/update" method="post">
       @csrf
+      <td>
+        <input type="hidden" name="id" value="{{$todo->id}}">
+      </td>
       <td>
         <input type="text" name="content" value="{{$todo->content}}">
       </td>
