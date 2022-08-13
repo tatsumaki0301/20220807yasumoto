@@ -11,13 +11,13 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -33,19 +33,19 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 ### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+-   **[Vehikl](https://vehikl.com/)**
+-   **[Tighten Co.](https://tighten.co)**
+-   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+-   **[64 Robots](https://64robots.com)**
+-   **[Cubet Techno Labs](https://cubettech.com)**
+-   **[Cyber-Duck](https://cyber-duck.co.uk)**
+-   **[Many](https://www.many.co.uk)**
+-   **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+-   **[DevSquad](https://devsquad.com)**
+-   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+-   **[OP.GG](https://op.gg)**
+-   **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+-   **[Lendio](https://lendio.com)**
 
 ## Contributing
 
@@ -64,37 +64,42 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 # アプリケーション名
+
 概要説明（どんなアプリか）
 < --- トップ画面の画像 ---- >
 (http://127.0.0.1:8000)
 
-
 ## 作成した目的
+
 概要説明（なんで作成したか）
-・COACHTECHプログラミング学習中の
+・COACHTECH プログラミング学習中の
 提出課題として作成
 
 ## 機能一覧
-- 例）ログイン機能
-・Todo一覧表示
-・新規Todo追加
-・Todo更新
-・Todo削除
+
+-   例）ログイン機能
+    - Todo 一覧表示
+    - 新規 Todo 追加
+    - Todo 更新
+    - Todo 削除
 
 ## 使用技術（実行環境）
-- 例）　Laravel　8.x（言語やフレームワーク、バージョンなどが記載されていると良い）
-・Laravel8.x
-・php
-・html
-・css
-・mysql
+
+-   例）　 Laravel 　 8.x（言語やフレームワーク、バージョンなどが記載されていると良い）
+    ・Laravel8.x
+    ・php
+    ・html
+    ・css
+    ・mysql
 
 ## テーブル設計
+
 < --- 作成したテーブル設計の画像 ---- >
 
-## ER図
+## ER 図
+
 < --- 作成したＥＲ図の画像 --->
 
-
 ## 他に記載することがあれば記述する
+
 例） ## 環境構築、## アカウントの種類（テストユーザーなど）
