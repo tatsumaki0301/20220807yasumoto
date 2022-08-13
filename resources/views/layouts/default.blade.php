@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <style>
     body{
-      background-color: blue;
+      background-color: navy;
     }
     </style>
 </head>
