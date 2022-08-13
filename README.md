@@ -25,7 +25,7 @@ COACHRECHの学習中の提出課題として作成
 
 
 ## ER図
-![ER図](nyuumon-larapj/image/ER図.png)  
+![ER図](/image/ER図.png)  
 
 ## 他に記載することがあれば記述する
 例） ## 環境構築、## アカウントの種類（テストユーザーなど）
