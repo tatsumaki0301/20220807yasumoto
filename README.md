@@ -72,7 +72,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## 作成した目的
 
 概要説明（なんで作成したか）
-・COACHTECH プログラミング学習中の
+- COACHTECH プログラミング学習中の
 提出課題として作成
 
 ## 機能一覧
@@ -86,11 +86,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## 使用技術（実行環境）
 
 -   例）　 Laravel 　 8.x（言語やフレームワーク、バージョンなどが記載されていると良い）
-    ・Laravel8.x
-    ・php
-    ・html
-    ・css
-    ・mysql
+    - Laravel8.x
+    - php
+    - html
+    - css
+    - mysql
 
 ## テーブル設計
 
