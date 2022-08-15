@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use App\Http\Requests\TodolistRequest;
@@ -10,8 +11,10 @@ class TodoController extends Controller
 {
     public function index()
     {
+        $user = auth::user();
         $todos = Todo::all();
-        return view('index', ['todos' => $todos]);
+        $param = ['todos' => $todos, 'user' => $user];
+        return view('index', $param);
     }
 
 
@@ -19,7 +22,7 @@ class TodoController extends Controller
     {
         $form = $request->all();
         Todo::create($form);
-        return redirect('/');
+        return redirect('/home');
     }
 
 
@@ -29,14 +32,32 @@ class TodoController extends Controller
         Todo::find($request->id);
         unset($form['_token']);
         Todo::where('id', $request->id)->update($form);
-        return redirect('/');
+        return redirect('/home');
     }
 
     public function remove(Request $request)
     {
         $todo = todo::find($request->id);
         Todo::find($request->deleteid)->delete();
-        return redirect('/');
+        return redirect('/home');
+    }
+
+    public function find()
+    {
+        $user = auth::user();
+        $todos = Todo::all();
+        $param = ['todos' => $todos, 'user' => $user];
+        return view('find', ['input' => ''], $param);
+    }
+
+    public function search(Request $request)
+    {
+        $todo = Todo::find($request->input);
+        $param = [
+            'todo' => $todo,
+            'input' => $request->input
+        ];
+        return view('find', $param);
     }
 
 }

@@ -67,7 +67,7 @@
   <div class="todolist_area">
     <table>
       <td>
-        <label class="title-name">Todo list  </label>
+        <label class="title-name">タスク検索  </label>
       </td>
       <td></td>
       <td>
@@ -91,16 +91,13 @@
       @endforeach
     </ul>
     @endif
-    <form action="/find" method="get">
-      <button class="searchbutton">タスク検索</button>
-    </form>
   <div class="addarea">
-    <form action="/home" method="post">
+    <form action="/find" method="post">
       @csrf
     <table>
       <tr>
         <td>
-        <input type="text" name="content" class="textbox">
+        <input type="text" name="content" class="textbox" value="{{$input}}">
         </td>
         <td>
           <select name="name">
@@ -113,7 +110,7 @@
           </select>
         </td>
         <td>
-        <button class=addbutton>追加</button>
+        <button class=addbutton>検索</button>
         </td>
       </tr>
     </table>
@@ -121,6 +118,7 @@
   </div>
 
     <div class="item_area">
+      @if (@isset($todo))
       <table>
         <tr>
           <th>作成日</th>
@@ -131,7 +129,7 @@
           <th></th>
           <th>削除</th>
         </tr>
-      @foreach ($todos as $todo)
+
         <tr>
           <td>
             {{$todo->created_at}}
@@ -168,8 +166,10 @@
           </td>
         </form>
         </tr>
-      @endforeach
+
       </table>
+      @endif
     </div>
+    <button class="returnbutton"><a href="/home">戻る</a></button>
   </div>
 @endsection
