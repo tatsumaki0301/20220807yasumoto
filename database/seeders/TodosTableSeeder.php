@@ -15,7 +15,7 @@ class TodosTableSeeder extends Seeder
     public function run()
     {
         Todo::create([
-            'content' => 'aaa',
+            'content' => 'aaa'
         ]);
         Todo::create([
             'content' => 'bbb'

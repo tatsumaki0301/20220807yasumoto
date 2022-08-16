@@ -13,10 +13,10 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $user = auth::user();
+        $user = Auth::user();
         $tags = Tag::all();
         $todos = Todo::all();
-        $param = ['todos' => $todos, 'user' => $user, 'tags' => $tags];
+        $param = ['todos' => $todos,   'user' => $user,'tags' => $tags];
         return view('index', $param);
     }
 
