@@ -9,7 +9,7 @@ use App\Http\Requests\TodolistRequest;
 
 class TodoController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $user = auth::user();
         $todos = Todo::all();
