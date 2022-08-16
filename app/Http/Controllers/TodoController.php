@@ -25,6 +25,7 @@ class TodoController extends Controller
     {
         $form = $request->all();
         $id = Auth::id();
+        $todo->user_id = Auth::user()->id;
         Todo::create($form);
         $tags = $this->tag->get();
         return redirect('/home', compact('tags'));
