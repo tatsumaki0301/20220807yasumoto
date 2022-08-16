@@ -85,6 +85,7 @@
         </td>
       </form>
     </table>
+
     @if (count($errors) > 0)
     <ul>
       @foreach ($errors->all() as $error)
@@ -94,9 +95,11 @@
       @endforeach
     </ul>
     @endif
+
     <form action="/find" method="get">
       <button class="searchbutton">タスク検索</button>
     </form>
+
   <div class="addarea">
     <form action="/home" method="post">
       @csrf
@@ -106,13 +109,10 @@
         <input type="text" name="content" class="textbox">
         </td>
         <td>
-          <select name="name">
-            <option></option>
-            <option value="家事">家事</option>
-            <option value="勉強">勉強</option>
-            <option value="運動">運動</option>
-            <option value="食事">食事</option>
-            <option value="移動">移動</option>
+          <select class="tag_item" id="tag_id" name="tag_id">
+            @foreach($tags as $tag)
+            <option value="{{$tag->id}}">{{$tag->name}}</option>
+            @endforeach
           </select>
         </td>
         <td>
