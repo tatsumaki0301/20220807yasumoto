@@ -78,9 +78,12 @@
           <a href="/register">登録</a>）</p>
         @endif
       </td>
-      <td>
-        ログアウト
-      </td>
+      <form action="{{route('logout')}}" method="POST">
+        @csrf
+        <td>
+          <button class="logoutbutton">ログアウト</button>
+        </td>
+      </form>
     </table>
     @if (count($errors) > 0)
     <ul>
