@@ -24,7 +24,7 @@ class TodolistRequest extends FormRequest
     public function rules()
     {
         return [
-            'content' => 'string|min:0|max:20'
+            'content' => 'string|min:0|max:20',
         ];
     }
 }

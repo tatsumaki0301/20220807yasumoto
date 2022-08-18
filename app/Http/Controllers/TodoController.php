@@ -23,9 +23,12 @@ class TodoController extends Controller
 
     public function create(TodolistRequest $request)
     {
-        $form = $request->all();
         $id = Auth::id();
-        $todo->user_id = Auth::user()->id;
+        $todo = ['user_id' => $id]; 
+        $form = [
+            $request->all(),
+            $todo
+        ];
         Todo::create($form);
         $tags = $this->tag->get();
         return redirect('/home', compact('tags'));
