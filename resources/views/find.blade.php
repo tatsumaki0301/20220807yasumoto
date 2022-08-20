@@ -94,31 +94,28 @@
       @endforeach
     </ul>
     @endif
-  <div class="addarea">
-    <form action="/find" method="post">
-      @csrf
-    <table>
-      <tr>
-        <td>
-        <input type="text" name="content" class="textbox" value="{{$input}}">
-        </td>
-        <td>
-          <select name="name">
-            <option></option>
-            <option value="家事">家事</option>
-            <option value="勉強">勉強</option>
-            <option value="運動">運動</option>
-            <option value="食事">食事</option>
-            <option value="移動">移動</option>
+    <div class="addarea">
+      <form action="search" method="POST">
+        @csrf
+      <table>
+        <tr>
+          <td>
+          <input type="text" name="input" class="textbox" value="{{$input}}">
+          </td>
+          <td>
+          <select class="tag_item" id="tag_id" name="tag_id">
+            @foreach($tags as $tag)
+            <option value="{{$tag->id}}">{{$tag->name}}</option>
+            @endforeach
           </select>
-        </td>
-        <td>
-        <button class=addbutton>検索</button>
-        </td>
-      </tr>
-    </table>
-    </form>
-  </div>
+          </td>
+          <td>
+          <input type="submit" class=addbutton value="検索">
+          </td>
+        </tr>
+      </table>
+      </form>
+    </div>
 
     <div class="item_area">
       @if (@isset($todo))
@@ -132,7 +129,6 @@
           <th></th>
           <th>削除</th>
         </tr>
-
         <tr>
           <td>
             {{$todo->created_at}}
@@ -146,13 +142,10 @@
             <input type="text" name="content" class="contentbox" value="{{$todo->content}}">
           </td>
           <td>
-          <select name="name">
-            <option></option>
-            <option value="家事">家事</option>
-            <option value="勉強">勉強</option>
-            <option value="運動">運動</option>
-            <option value="食事">食事</option>
-            <option value="移動">移動</option>
+          <select class="tag_item" id="tag_id" name="tag_id">
+            @foreach($tags as $tag)
+            <option value="{{$tag->id}}">{{$tag->name}}</option>
+            @endforeach
           </select>
           </td>
           <td>
@@ -169,10 +162,9 @@
           </td>
         </form>
         </tr>
-
       </table>
       @endif
     </div>
-    <button class="returnbutton"><a href="/home">戻る</a></button>
+      <button class="returnbutton"><a href="/home">戻る</a></button>
   </div>
 @endsection

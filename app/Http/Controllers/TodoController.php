@@ -16,7 +16,11 @@ class TodoController extends Controller
         $user = Auth::user();
         $tags = Tag::all();
         $todos = Todo::all();
-        $param = ['todos' => $todos,   'user' => $user,'tags' => $tags];
+        $param = [
+            'todos' => $todos,
+            'user' => $user,
+            'tags' => $tags
+        ];
         return view('index', $param);
     }
 
@@ -24,14 +28,13 @@ class TodoController extends Controller
     public function create(TodolistRequest $request)
     {
         $id = Auth::id();
-        $todo = ['user_id' => $id]; 
         $form = [
-            $request->all(),
-            $todo
+            'content' => $request->content,
+            'tag_id' => $request->tag_id,
+            'user_id' => $id
         ];
         Todo::create($form);
-        $tags = $this->tag->get();
-        return redirect('/home', compact('tags'));
+        return redirect('/home');
     }
 
 
@@ -53,23 +56,25 @@ class TodoController extends Controller
 
     public function find()
     {
-        $user = auth::user();
+        $user = Auth::user();
+        $tags = Tag::all();
         $todos = Todo::all();
-        $param = ['todos' => $todos, 'user' => $user];
-        return view('find', ['input' => ''], $param);
+        $param = [
+            'todos' => $todos,
+            'user' => $user,
+            'tags' => $tags,
+        ];
+        return view('find', ['input' => ''] , $param);
     }
 
     public function search(Request $request)
     {
-        $todo = Todo::find($request->input);
+
+        $todo = Todo::where('content',$request->input)->first();
         $param = [
             'todo' => $todo,
             'input' => $request->input
         ];
         return view('find', $param);
     }
-
 }
-
-
-
