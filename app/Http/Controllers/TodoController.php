@@ -99,7 +99,6 @@ class TodoController extends Controller
                     'tags' => $tags,
                     'input' => $request->input
                 ];
-                dd($todo);
                 return view('find', $param);
 
     }
