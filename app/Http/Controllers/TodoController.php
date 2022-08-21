@@ -73,11 +73,13 @@ class TodoController extends Controller
         $user = Auth::user();
         $tags = Tag::all(); 
         $todos = Todo::all();
-        $todo = Todo::where('content', $request->input)->get();
+        $todo = Todo::where('content', 'LIKE BINARY', "%{$request->input}%")->get();
+        $tag = Tag::where('name', 'LIKE BINARY', "%{$request->tagid}%")->get();
         $param = [
             'todo' => $todo,
             'user' => $user,
             'tags' => $tags,
+            'tagid' => $request->tagid, 
             'input' => $request->input
         ];
         return view('find', $param);

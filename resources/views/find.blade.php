@@ -105,7 +105,7 @@
           <td>
           <select class="tag_item" id="tag_id" name="tag_id">
             @foreach($tags as $tag)
-            <option value="{{$tag->id}}">{{$tag->name}}</option>
+            <option value="{{$tagid}}">{{$tag->name}}</option>
             @endforeach
           </select>
           </td>
@@ -129,6 +129,7 @@
           <th></th>
           <th>削除</th>
         </tr>
+        @foreach ($todo as $todo)
         <tr>
           <td>
             {{$todo->created_at}}
@@ -143,9 +144,9 @@
           </td>
           <td>
           <select class="tag_item" id="tag_id" name="tag_id">
-            @foreach($tags as $tag)
+          @foreach($tags as $tag)
             <option value="{{$tag->id}}">{{$tag->name}}</option>
-            @endforeach
+          @endforeach
           </select>
           </td>
           <td>
@@ -162,6 +163,7 @@
           </td>
         </form>
         </tr>
+      @endforeach
       </table>
       @endif
     </div>
