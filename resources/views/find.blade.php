@@ -95,7 +95,7 @@
     </ul>
     @endif
     <div class="addarea">
-      <form action="search" method="POST">
+      <form action="find" method="POST">
         @csrf
       <table>
         <tr>

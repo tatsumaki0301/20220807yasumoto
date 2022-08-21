@@ -70,11 +70,16 @@ class TodoController extends Controller
     public function search(Request $request)
     {
 
-        $todo = Todo::where('content',$request->input)->first();
+        $user = Auth::user();
+        $tags = Tag::all(); 
+        $todos = Todo::all();
+        $todo = Todo::where('content', $request->input)->get();
         $param = [
             'todo' => $todo,
+            'user' => $user,
+            'tags' => $tags,
             'input' => $request->input
         ];
-        return view('find', $param);
+        return redirect('/find', $param);
     }
 }
