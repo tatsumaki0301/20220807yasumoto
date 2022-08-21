@@ -6,22 +6,37 @@
     margin: 100px auto;
     border-radius: 10px;
   }
+  .title-name{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .username{
+    text-align: right;
+  }
+  .logoutbutton{
+    padding: 5px 10px;
+    background-color: white;
+    color: red;
+    border-color: red;
+    border-radius: 5px;
+  }
   .addarea{
     width: 90%;
     margin: 0px auto;
     padding: 20px 0px;
   }
-  .title-name{
-    font-size: 25px;
-    font-weight: bold;
-  }
   .textbox{
     padding: 10px 5px;
     border-radius:5px;
-    width: 100%;
+    width: 120%;
     border: solid 1px lightgrey;
   }
-  .addbutton{
+  .tag_item{
+    margin: 0px 10px;
+    padding: 10px 5px;
+    border-radius: 5px;
+  }
+  .searchbutton{
     padding: 10px 10px;
     background-color: white;
     color: magenta;
@@ -59,6 +74,13 @@
     border-color: lime;
     border-radius: 5px;
   }
+  .returnbutton{
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0px 0px 20px 20px;
+  }
 </style>
 
 @section('title', 'COACHTECH')
@@ -72,7 +94,7 @@
       <td></td>
       <td>
         @if (Auth::check())
-        <p>{{'「' .$user->name . '」でログイン中'}}</p>
+        <p class="username">{{'「' .$user->name . '」でログイン中'}}</p>
         @else
         <p>ログインしてください。（<a href="/login">ログイン</a>|
           <a href="/register">登録</a>）</p>
@@ -105,12 +127,11 @@
           <td>
           <select class="tag_item" id="tag_id" name="tag_id">
             @foreach($tags as $tag)
-            <option value="{{$tagid}}">{{$tag->name}}</option>
+            <option></option>
+            <option value="{{$tag->id}}">{{$tag->name}}</option>
             @endforeach
           </select>
-          </td>
-          <td>
-          <input type="submit" class=addbutton value="検索">
+          <input type="submit" class=searchbutton value="検索">
           </td>
         </tr>
       </table>

@@ -6,20 +6,44 @@
     margin: 100px auto;
     border-radius: 10px;
   }
+  .title-name{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .username{
+    text-align: right;
+  }
+  .logoutbutton{
+    padding: 5px 10px;
+    background-color: white;
+    color: red;
+    border-color: red;
+    border-radius: 5px;
+  }
+  .searchlinkbutton{
+    padding: 5px 10px;
+    background-color: white;
+    color: yellow;
+    border-color: yellow;
+    border-radius: 5px;
+    margin-bottom: -20px;
+  }
   .addarea{
     width: 90%;
     margin: 0px auto;
     padding: 20px 0px;
   }
-  .title-name{
-    font-size: 25px;
-    font-weight: bold;
+  .tag_item{
+    margin: 0px 10px;
+    padding: 10px 5px;
+    border-radius: 5px;
   }
   .textbox{
     padding: 10px 5px;
     border-radius:5px;
-    width: 100%;
+    width: 120%;
     border: solid 1px lightgrey;
+    margin-right: 20px;
   }
   .addbutton{
     padding: 10px 10px;
@@ -72,7 +96,7 @@
       <td></td>
       <td>
         @if (Auth::check())
-        <p>{{'「' .$user->name . '」でログイン中'}}</p>
+        <p class="username">{{'「' .$user->name . '」でログイン中'}}</p>
         @else
         <p>ログインしてください。（<a href="/login">ログイン</a>|
           <a href="/register">登録</a>）</p>
@@ -96,11 +120,11 @@
     </ul>
     @endif
 
-    <form action="/find" method="get">
-      <button class="searchbutton">タスク検索</button>
-    </form>
 
   <div class="addarea">
+    <form action="/find" method="get">
+      <button class="searchlinkbutton">タスク検索</button>
+    </form>
     <form action="/home" method="post">
       @csrf
     <table>
@@ -114,8 +138,6 @@
             <option value="{{$tag->id}}">{{$tag->name}}</option>
             @endforeach
           </select>
-        </td>
-        <td>
         <button class=addbutton>追加</button>
         </td>
       </tr>
