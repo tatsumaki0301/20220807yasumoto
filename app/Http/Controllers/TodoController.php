@@ -80,6 +80,6 @@ class TodoController extends Controller
             'tags' => $tags,
             'input' => $request->input
         ];
-        return redirect('/find', $param);
+        return view('find', $param);
     }
 }
