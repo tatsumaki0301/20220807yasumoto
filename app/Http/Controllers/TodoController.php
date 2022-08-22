@@ -73,7 +73,9 @@ class TodoController extends Controller
         $user = Auth::user();
         $tags = Tag::all(); 
         $todo = Todo::where(
-                'content', 'LIKE BINARY', "%{$request->input}%"
+                'content',
+                'LIKE BINARY',
+                "%{$request->input}%"
             )->get();
 
             if (!$request->input){
@@ -84,9 +86,8 @@ class TodoController extends Controller
             
             $query = Todo::query();
             if ($request->tag_id){
-                $query->Where('tag_id',$request->tag_id);
+                $query->where('tag_id',$request->tag_id);
             }
-
             if ($request->input){
                 $query->where('content', 'LIKE BINARY', "%{$request->input}%");
             }
@@ -99,6 +100,7 @@ class TodoController extends Controller
                     'tags' => $tags,
                     'input' => $request->input
                 ];
+
                 return view('find', $param);
 
     }

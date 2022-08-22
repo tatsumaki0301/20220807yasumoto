@@ -23,8 +23,8 @@
   .searchlinkbutton{
     padding: 5px 10px;
     background-color: white;
-    color: yellow;
-    border-color: yellow;
+    color: YellowGreen;
+    border-color: YellowGreen;
     border-radius: 5px;
     margin-bottom: -20px;
   }
