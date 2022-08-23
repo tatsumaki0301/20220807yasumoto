@@ -15,6 +15,7 @@ COACHTECH の学習中の提出課題として作成
 -   Todo 追加
 -   Todo 更新
 -   Todo 削除
+-   Todo 検索
 
 ## 使用技術（実行環境）
 
@@ -26,10 +27,10 @@ COACHTECH の学習中の提出課題として作成
 
 ## テーブル設計
 
-![テーブル](/image/table.png)
+![テーブル](/image/table1.png)
 
 ## ER 図
 
-![ER図](/image/ER図.png)
+![ER図](/image/ER図1.png)
 
 ## 他に記載することがあれば記述する

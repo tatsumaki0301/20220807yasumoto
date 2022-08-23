@@ -86,7 +86,7 @@ class TodoController extends Controller
             
             $query = Todo::query();
             if ($request->tag_id){
-                $query->where('tag_id',$request->tag_id);
+                $query->where('tag_id', $request->tag_id);
             }
             if ($request->input){
                 $query->where('content', 'LIKE BINARY', "%{$request->input}%");

@@ -126,8 +126,8 @@
           </td>
           <td>
           <select class="tag_item" id="tag_id" name="tag_id">
-            @foreach($tags as $tag)
             <option></option>
+            @foreach($tags as $tag)
             <option value="{{$tag->id}}">{{$tag->name}}</option>
             @endforeach
           </select>
@@ -139,7 +139,7 @@
     </div>
 
     <div class="item_area">
-      @if (@isset($todo))
+      @if (@isset($todo,$tag))
       <table>
         <tr>
           <th>作成日</th>
