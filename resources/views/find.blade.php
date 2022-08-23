@@ -139,7 +139,7 @@
     </div>
 
     <div class="item_area">
-      @if (@isset($todo,$tag))
+      @if (@isset($todo))
       <table>
         <tr>
           <th>作成日</th>
