@@ -19,7 +19,7 @@ class TodoController extends Controller
         $param = [
             'todos' => $todos,
             'user' => $user,
-            'tags' => $tags
+            'tags' => $tags,
         ];
         return view('index', $param);
     }
@@ -49,7 +49,7 @@ class TodoController extends Controller
 
     public function remove(Request $request)
     {
-        $todo = todo::find($request->id);
+        $todo = Todo::find($request->id);
         Todo::find($request->deleteid)->delete();
         return redirect('/home');
     }
@@ -59,6 +59,7 @@ class TodoController extends Controller
         $user = Auth::user();
         $tags = Tag::all();
         $todos = Todo::all();
+
         $param = [
             'todos' => $todos,
             'user' => $user,
@@ -71,7 +72,9 @@ class TodoController extends Controller
     {
 
         $user = Auth::user();
-        $tags = Tag::all(); 
+        $tags = Tag::all();
+        $tagname = $_POST["tag_id"];
+
 
         $query = Todo::query();
             if ($request->tag_id){
@@ -80,6 +83,9 @@ class TodoController extends Controller
             if ($request->input){
                 $query->where('content', 'LIKE BINARY', "%{$request->input}%");
             }
+            if (!$request->tag_id){
+                $query->select('tag_id','content','created_at');
+            };
 
             $todo = $query->get();
 
@@ -87,6 +93,7 @@ class TodoController extends Controller
                     'todo' => $todo,
                     'user' => $user,
                     'tags' => $tags,
+                    'tagname' => $tagname,
                     'input' => $request->input
                     
                 ];
