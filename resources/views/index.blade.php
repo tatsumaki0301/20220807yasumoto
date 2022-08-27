@@ -171,7 +171,7 @@
           </td>
           <td>
           <select class="tag_item" id="tag_id" name="tag_id">
-            @foreach($tags as $tag)
+            @foreach($todos as $tag)
             <option value="{{$tag->id}}">{{$tag->name}}</option>
             @endforeach
           </select>

@@ -11,11 +11,13 @@ use App\Http\Requests\TodolistRequest;
 
 class TodoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
         $tags = Tag::all();
-        $todos = Todo::all();
+        $todo = Todo::all();
+        $todos = Todo::with('tag')->where('id', $tags && 'tag_id', $todo)->get();
+
         $param = [
             'todos' => $todos,
             'user' => $user,
@@ -75,7 +77,6 @@ class TodoController extends Controller
         $tags = Tag::all();
         $tagname = $_POST["tag_id"];
 
-
         $query = Todo::query();
             if ($request->tag_id){
                 $query->where('tag_id', $request->tag_id);
@@ -83,9 +84,6 @@ class TodoController extends Controller
             if ($request->input){
                 $query->where('content', 'LIKE BINARY', "%{$request->input}%");
             }
-            if (!$request->tag_id){
-                $query->select('tag_id','content','created_at');
-            };
 
             $todo = $query->get();
 
