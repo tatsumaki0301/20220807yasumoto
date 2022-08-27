@@ -15,13 +15,14 @@ class TodoController extends Controller
     {
         $user = Auth::user();
         $tags = Tag::all();
-        $todo = Todo::all();
-        $todos = Todo::with('tag')->where('id', $tags && 'tag_id', $todo)->get();
+        $todos = Todo::all();
+        $todo = Todo::with('tag')->where('id', $tags && 'tag_id', $todos)->get();
 
         $param = [
             'todos' => $todos,
             'user' => $user,
             'tags' => $tags,
+            'todo' => $todo
         ];
         return view('index', $param);
     }
