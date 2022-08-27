@@ -16,7 +16,9 @@ class TodoController extends Controller
         $user = Auth::user();
         $tags = Tag::all();
         $todos = Todo::all();
+        $todos = Todo::paginate(5);
         $todo = Todo::with('tag')->where('id', $tags && 'tag_id', $todos)->get();
+
 
         $param = [
             'todos' => $todos,
@@ -31,10 +33,13 @@ class TodoController extends Controller
     public function create(TodolistRequest $request)
     {
         $id = Auth::id();
+        $tags = Tag::all();
+        $todos = Todo::all();
+
         $form = [
             'content' => $request->content,
             'tag_id' => $request->tag_id,
-            'user_id' => $id
+            'user_id' => $id,
         ];
         Todo::create($form);
         return redirect('/home');
@@ -62,6 +67,7 @@ class TodoController extends Controller
         $user = Auth::user();
         $tags = Tag::all();
         $todos = Todo::all();
+        $todos = Todo::paginate(5);
 
         $param = [
             'todos' => $todos,
@@ -76,7 +82,8 @@ class TodoController extends Controller
 
         $user = Auth::user();
         $tags = Tag::all();
-        $tagname = $_POST["tag_id"];
+        $tagname = $_POST['tag_id'];
+        $todos = Todo::all();
 
         $query = Todo::query();
             if ($request->tag_id){
@@ -92,6 +99,7 @@ class TodoController extends Controller
                     'todo' => $todo,
                     'user' => $user,
                     'tags' => $tags,
+                    'todos' => $todos,
                     'tagname' => $tagname,
                     'input' => $request->input
                     

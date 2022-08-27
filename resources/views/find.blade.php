@@ -166,7 +166,8 @@
           <td>
           <select class="tag_item" id="tag_id" name="tag_id">
           @foreach($tags as $tag)
-            <option value="{{$tag->id}}" @if($tag->id==$tagname) selected @endif>{{$tag->name}}</option>
+            <option value="{{$tag->id}}" @if($tag->id == $todo->tag_id) selected @endif
+              @if($tag->id == $tagname) selected @endif>{{$tag->name}}</option>
           @endforeach
           </select>
           </td>
