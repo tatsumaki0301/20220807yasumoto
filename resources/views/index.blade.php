@@ -141,7 +141,7 @@
             <option value="{{$tag->id}}">{{$tag->name}}</option>
             @endforeach
           </select>
-        <button class=addbutton>追加</button>
+        <button class=addbutton>ADD</button>
         </td>
       </tr>
     </table>

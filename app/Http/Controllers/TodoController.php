@@ -19,7 +19,6 @@ class TodoController extends Controller
         $todos = Todo::paginate(5);
         $todo = Todo::with('tag')->where('id', $tags && 'tag_id', $todos)->get();
 
-
         $param = [
             'todos' => $todos,
             'user' => $user,
